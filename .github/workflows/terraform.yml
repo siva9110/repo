@@ -41,8 +41,8 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
 
-  terraform-apply:
-    name: Terraform Apply
+  terraform-destroy:
+    name: Terraform destroy
     runs-on: ubuntu-latest
     needs: terraform-plan
     if: github.ref == 'refs/heads/main'
@@ -54,5 +54,5 @@ jobs:
         uses: hashicorp/setup-terraform@v3
       - name: Terraform init -migrate-state
         run:  terraform init -migrate-state
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
+      - name: Terraform destroy
+        run: terraform destroy -auto-approve
