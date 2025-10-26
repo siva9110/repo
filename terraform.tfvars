@@ -6,5 +6,3 @@ subscription_id = "2213e8b1-dbc7-4d54-8aff-b5e315df5e5b"
 azurerm_resource_group = "1-c57501ee-playground-sandbox"
 azurerm_storage_account = "testingon25th2025"
 azurerm_virtual_network = "testingvnetontf"
-
-
