@@ -3,7 +3,7 @@ name: Terraform Deployment (Shiva Branch)
 on:
   push:
     branches:
-      - shiva
+      - siva
 
 env:
   ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
