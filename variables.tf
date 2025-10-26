@@ -36,3 +36,8 @@ variable "azurerm_location" {
     type = string
   default     = "South Central US"
 }
+
+variable "azurerm_virtual_network" {
+    type = string
+  
+}
