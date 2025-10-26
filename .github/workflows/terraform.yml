@@ -38,4 +38,3 @@ jobs:
     - name: Terraform Apply
       run: terraform apply -auto-approve
       if: github.ref == 'refs/heads/main'
-``
