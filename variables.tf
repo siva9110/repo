@@ -1,43 +1,43 @@
 variable "client_id" {
-    type = string
-  
+  type = string
+
 }
 
 variable "client_secret" {
-    type = string
-  
+  type = string
+
 }
 
 variable "tenant_id" {
-    type = string
-  
+  type = string
+
 }
 
 variable "subscription_id" {
-    type = string
-  
+  type = string
+
 }
 
 
 variable "azurerm_resource_group" {
-    type = string
-    description = "ck-rg"
-  
+  type        = string
+  description = "ck-rg"
+
 }
 
 
 variable "azurerm_storage_account" {
-    type = string
-    description = "ck-sa"
-     default     = "South Central US"
-}
-
-variable "azurerm_location" {
-    type = string
+  type        = string
+  description = "ck-sa"
   default     = "South Central US"
 }
 
+variable "azurerm_location" {
+  type    = string
+  default = "South Central US"
+}
+
 variable "azurerm_virtual_network" {
-    type = string
-  
+  type = string
+
 }
