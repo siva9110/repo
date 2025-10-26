@@ -47,3 +47,20 @@ resource "azurerm_subnet" "siva" {
   depends_on           = [azurerm_virtual_network.v-net]
 
 }
+
+resource "azurerm_storage_account" "storage" {
+  name                     = "kcufsunny"
+  location                 = "West US"
+  resource_group_name      = var.azurerm_resource_group
+  account_tier             = "Standard"
+  account_replication_type = "GRS"
+
+  tags = {
+    environment = "staging"
+  }
+}
+
+
+
+
+
