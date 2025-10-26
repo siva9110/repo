@@ -9,6 +9,18 @@ provider "azurerm" {
 
 }
 
+
+terraform {
+  backend "azurerm" {
+    storage_account_name = "testingon25th2025"
+    container_name          = "testcont"
+    key                     = "terraform.tfstate"
+    access_key = "7e8AX0DtDmPRUWAzYRv8AGNuUEMaj7bmMvgnOjXiND/LnsOC4jNT9TtJtE/zHtFO+XGx7FUDbQzA+AStzLSYng=="
+    
+  }
+}
+
+
 resource "azurerm_virtual_network" "v-net" {
   name                = var.azurerm_virtual_network
   address_space       = ["10.0.0.0/16"]
@@ -16,21 +28,6 @@ resource "azurerm_virtual_network" "v-net" {
   resource_group_name = var.azurerm_resource_group
 
 }
-
-
-
-resource "azurerm_storage_account" "storage" {
-  name                     = "exam9110398"
-  resource_group_name      = var.azurerm_resource_group
-  location                 = var.azurerm_location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-
-  tags = {
-    environment = "Terraform"
-  }
-}
-
 
 resource "azurerm_subnet" "subnet-1" {
   name                 = "testing-prodsubnet"

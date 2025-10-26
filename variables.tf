@@ -32,6 +32,15 @@ variable "azurerm_storage_account" {
   default     = "South Central US"
 }
 
+variable "container_name" {
+  type = string
+  
+}
+
+variable "access_key" {
+  type = string
+  
+}
 variable "azurerm_location" {
   type    = string
   default = "South Central US"
