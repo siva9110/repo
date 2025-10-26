@@ -37,3 +37,13 @@ resource "azurerm_subnet" "subnet-1" {
   depends_on           = [azurerm_virtual_network.v-net]
 
 }
+
+
+resource "azurerm_subnet" "siva" {
+  name                 = "sivasubnetfordevops"
+  virtual_network_name = var.azurerm_virtual_network
+  resource_group_name  = var.azurerm_resource_group
+  address_prefixes     = ["10.0.1.0/24"]
+  depends_on           = [azurerm_virtual_network.v-net]
+
+}
