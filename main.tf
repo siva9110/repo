@@ -127,7 +127,7 @@ resource "azurerm_windows_virtual_machine" "vm-1" {
   admin_password      = "P@ssword1234!" # Use secrets in production
 
   network_interface_ids = [
-    azurerm_network_interface.nic.id,
+    azurerm_network_interface.nic-1.id,
   ]
 
   os_disk {
