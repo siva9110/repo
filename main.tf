@@ -69,7 +69,7 @@ resource "azurerm_network_interface" "nic" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = var.azurerm_virtual_network
+    subnet_id                     = azurerm_subnet.siva.id
     private_ip_address_allocation = "Dynamic"
   }
 }
