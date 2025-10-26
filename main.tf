@@ -16,3 +16,17 @@ resource "azurerm_virtual_network" "v-net" {
   resource_group_name = var.azurerm_resource_group
 
 }
+
+
+
+resource "azurerm_storage_account" "storage" {
+  name                     = "exam9110398"
+  resource_group_name      = var.azurerm_resource_group
+  location                 = var.azurerm_location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+
+  tags = {
+    environment = "Terraform"
+  }
+}
