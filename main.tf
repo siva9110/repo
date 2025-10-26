@@ -106,4 +106,48 @@ resource "azurerm_windows_virtual_machine" "vm" {
 
 
 
+resource "azurerm_network_interface" "nic-1" {
+  name                = "winvm-nic-1"
+  location            = var.azurerm_location
+  resource_group_name = var.azurerm_resource_group
+
+  ip_configuration {
+    name                          = "internal-1"
+    subnet_id                     = azurerm_subnet.siva.id
+    private_ip_address_allocation = "Dynamic"
+  }
+}
+
+resource "azurerm_windows_virtual_machine" "vm-1" {
+  name                = "winvm-basic-1"
+  resource_group_name = var.azurerm_resource_group
+  location            = var.azurerm_location
+  size                = "Standard_B1s" # very basic VM size
+  admin_username      = "adminuser"
+  admin_password      = "P@ssword1234!" # Use secrets in production
+
+  network_interface_ids = [
+    azurerm_network_interface.nic.id,
+  ]
+
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+
+  source_image_reference {
+    publisher = "MicrosoftWindowsServer"
+    offer     = "WindowsServer"
+    sku       = "2019-Datacenter"
+    version   = "latest"
+  }
+
+  tags = {
+    environment = "sandbox"
+  }
+}
+
+
+
+
 
