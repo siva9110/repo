@@ -23,16 +23,16 @@ terraform {
 
 resource "azurerm_virtual_network" "v-net" {
   name                = var.azurerm_virtual_network
-  address_space       = ["10.0.0.0/16"]
+  address_space       = ["10.0.2.0/16"]
   location            = var.azurerm_location
   resource_group_name = var.azurerm_resource_group
 
 }
 
 resource "azurerm_subnet" "subnet-1" {
-  name                 = "testing-prodsubnet"
+  name                 = "testingvsub"
   virtual_network_name = var.azurerm_virtual_network
   resource_group_name  = var.azurerm_resource_group
-  address_prefixes     = ["10.0.0.7/24"]
+  address_prefixes     = ["10.0.0.1/24"]
 
 }
