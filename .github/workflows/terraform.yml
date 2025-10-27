@@ -52,7 +52,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
       - name: Terraform init -migrate-state
         run:  terraform init -migrate-state
-      - name: Terraform apply
+      - name: Terraform apply -auto-approve
         run: terraform  apply -auto-approve
 
         
