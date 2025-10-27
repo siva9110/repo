@@ -39,8 +39,8 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
 
-  terraform-destroy:
-    name: Terraform destroy
+  terraform-apply:
+    name: Terraform apply
     runs-on: ubuntu-latest
     needs: terraform-plan
     if: github.ref == 'refs/heads/main'
