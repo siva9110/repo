@@ -21,8 +21,6 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
-      - name: Terraform init -migrate-state
-        run:  terraform init -migrate-state
       - name: Terraform Init
         run: terraform init
 
