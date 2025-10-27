@@ -53,7 +53,6 @@ jobs:
       - name: Terraform init -migrate-state
         run:  terraform init -migrate-state
       - name: Terraform apply
-        run: terraform  apply -auto-approve
-
+        run: terraform  apply 
 
         
