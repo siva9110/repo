@@ -15,7 +15,7 @@ terraform {
     storage_account_name = "teststorageforsiva"
     container_name       = "testcont"
     key                  = "terraform.tfstate"
-    access_key           = "nHnV7fmu14hwX+tQecLB4q5O0u2Y4MGGfvRY90b+LQV66+bx4MICTikt9hx0qjI2zQESg8wrkkOb+AStkZBtgA=="
+    access_key = var.access_key
 
   }
 }
