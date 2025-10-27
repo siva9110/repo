@@ -15,7 +15,7 @@ terraform {
     storage_account_name = "teststorageforsiva"
     container_name       = "testcont"
     key                  = "terraform.tfstate"
-    access_key = var.access_key
+    access_key              = "7e8AX0DtDmPRUWAzYRv8AGNuUEMaj7bmMvgnOjXiND/LnsOC4jNT9TtJtE/zHtFO+XGx7FUDbQzA+AStzLSYng=="
 
   }
 }
@@ -146,6 +146,7 @@ resource "azurerm_windows_virtual_machine" "vm-1" {
     environment = "sandbox"
   }
 }
+
 
 
 
