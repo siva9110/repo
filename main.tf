@@ -12,10 +12,10 @@ provider "azurerm" {
 
 terraform {
   backend "azurerm" {
-    storage_account_name = "exam9110398"
+    storage_account_name = "teststorageforsiva"
     container_name       = "testcont"
     key                  = "terraform.tfstate"
-    access_key           = "7e8AX0DtDmPRUWAzYRv8AGNuUEMaj7bmMvgnOjXiND/LnsOC4jNT9TtJtE/zHtFO+XGx7FUDbQzA+AStzLSYng=="
+    access_key = var.access_key
 
   }
 }
@@ -30,7 +30,7 @@ resource "azurerm_virtual_network" "v-net" {
 }
 
 resource "azurerm_subnet" "subnet-1" {
-  name                 = "testingvsub"
+  name                 = "Prod-sub-1"
   virtual_network_name = var.azurerm_virtual_network
   resource_group_name  = var.azurerm_resource_group
   address_prefixes     = ["10.0.0.0/24"]
@@ -40,7 +40,7 @@ resource "azurerm_subnet" "subnet-1" {
 
 
 resource "azurerm_subnet" "siva" {
-  name                 = "sivasubnetfordevops"
+  name                 = "Test-sub"
   virtual_network_name = var.azurerm_virtual_network
   resource_group_name  = var.azurerm_resource_group
   address_prefixes     = ["10.0.1.0/24"]
@@ -49,7 +49,7 @@ resource "azurerm_subnet" "siva" {
 }
 
 resource "azurerm_storage_account" "storage" {
-  name                     = "kcufsunny"
+  name                     = "9110398220siva"
   location                 = "West US"
   resource_group_name      = var.azurerm_resource_group
   account_tier             = "Standard"
