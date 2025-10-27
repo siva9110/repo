@@ -73,7 +73,6 @@ resource "azurerm_storage_account" "storage" {
 }
 
 
-
 resource "azurerm_network_interface" "nic" {
   name                = "winvm-nic"
   location            = var.azurerm_location
