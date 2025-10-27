@@ -8,3 +8,4 @@ azurerm_storage_account = "teststorageforsiva"
 azurerm_virtual_network = "v-net-prod"
 container_name          = "testcont"
 access_key           = "nHnV7fmu14hwX+tQecLB4q5O0u2Y4MGGfvRY90b+LQV66+bx4MICTikt9hx0qjI2zQESg8wrkkOb+AStkZBtgA=="
+
